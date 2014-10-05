@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="techNodeApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechNode</title>
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+      <script src="bootstrap/js/jquery.min.js" type="text/javascript"></script>
+      <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
+      <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+      <script src="angular/angular.js" type="text/javascript"></script>
+      <script src="angular-route/angular-route.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">TechNode</a>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right" ng-show="me">
+            <li>
+              <img ng-src="{{me.avatarUrl}}" title="{{me.name}}" class="img-rounded"/>
+            </li>
+            <li>
+              <a href="" ng-click="logout()">Log out</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="container" style="margin-top:100px;">
+      <div class="row" ng-view></div>
+    </div>
+    <script type="text/javascript" src="/technode.js"></script>
+    <script type="text/javascript" src="/services/socket.js"></script>
+    <script type="text/javascript" src="/router.js"></script>
+    <script type="text/javascript" src="/directives/auto-scroll-to-bottom.js"></script>
+    <script type="text/javascript" src="/directives/ctrl-enter-break-line.js"></script>
+    <script type="text/javascript" src="/controllers/login.js"></script>
+    <script type="text/javascript" src="/controllers/room.js"></script>
+    <script type="text/javascript" src="/controllers/message-creator.js"></script>
+  </body>
+</html>
